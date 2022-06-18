@@ -4,7 +4,7 @@ import {
   solid,
   // regular,
   brands,
-} from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
+} from "@fortawesome/fontawesome-svg-core/import.macro";
 
 class App extends Component {
   state = {
@@ -21,7 +21,6 @@ class App extends Component {
         page: "GitHub",
         openInNewTab: true,
         url: "https://github.com/JamieTsai1024/Game-of-Life-Simulator",
-        // icon: solid("user-secret"),
         icon: brands("github"),
       },
     ],
