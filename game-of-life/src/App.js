@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import NavigationBar from "./components/NavigationBar";
-// import CustomButton from "./components/CustomButton";
 import OptionsBar from "./components/OptionsBar";
 import Board from "./components/Board";
-// import Square from "./components/Square";
 import {
   solid,
   // regular,
@@ -12,36 +10,6 @@ import {
 
 // const originalBoard = [];
 class App extends Component {
-  // state = {
-  //   links: [
-  //     {
-  //       id: 0,
-  //       page: "Explanation",
-  //       openInNewTab: false,
-  //       url: "#explanation",
-  //       icon: solid("circle-info"),
-  //     },
-  //     {
-  //       id: 1,
-  //       page: "GitHub",
-  //       openInNewTab: true,
-  //       url: "https://github.com/JamieTsai1024/Game-of-Life-Simulator",
-  //       icon: brands("github"),
-  //     },
-  //   ],
-  //   start: true,
-  //   reset: true,
-  //   board: [
-  //     [false, false, true, true],
-  //     [false, true, false, true],
-  //   ],
-  //   // board: [
-  //   //   [0, 1, 1, 0],
-  //   //   [0, 0, 1, 1],
-  //   // ],
-  //   originalBoard: [],
-  // };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -64,13 +32,9 @@ class App extends Component {
       start: true,
       reset: true,
       board: [
-        [false, false, true, true],
-        [false, true, false, true],
+        [0, 1, 1, 0],
+        [0, 0, 1, 1],
       ],
-      // board: [
-      //   [0, 1, 1, 0],
-      //   [0, 0, 1, 1],
-      // ],
       originalBoard: [],
     };
   }
@@ -85,7 +49,7 @@ class App extends Component {
   };
 
   handleReset = () => {
-    console.log("reset");
+    // console.log("reset");
     if (this.state.reset) {
       // **Figure out how to reset (might get rid of originalBoard state and just put it here and when initializing the board state)
       this.setState({ board: this.state.originalBoard });
@@ -96,18 +60,17 @@ class App extends Component {
   };
 
   handleNext = () => {
-    console.log("sdfghjk");
+    // console.log("sdfghjk");
     const board = this.nextStep(this.state.board);
     this.setState({ board: board });
   };
 
   handleSquareClick = (row, col) => {
-    console.log("here1", row, col);
-    // [...this.state.counters];
+    // console.log("here1", row, col);
     const board = [...this.state.board];
-    console.log("here2");
+    // console.log("here2");
     board[row][col] = !board[row][col];
-    console.log("here3");
+    // console.log("here3");
     this.setState({ board: board });
   };
 
@@ -117,6 +80,8 @@ class App extends Component {
         <NavigationBar links={this.state.links} />
         <Board
           board={this.state.board}
+          liveColour="#a864d3"
+          deadColour=""
           onSquareClick={this.handleSquareClick}
         />
         {/* <Square colour="#1B5C41" onSquareClick={this.handleSquareClick} /> */}
