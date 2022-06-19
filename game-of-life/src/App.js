@@ -7,6 +7,7 @@ import {
   brands,
 } from "@fortawesome/fontawesome-svg-core/import.macro";
 
+// const originalBoard = [];
 class App extends Component {
   state = {
     links: [
@@ -25,7 +26,37 @@ class App extends Component {
         icon: brands("github"),
       },
     ],
+    play: true,
+    reset: false,
+    board: [],
+    originalBoard: [],
   };
+
+  nextStep = (board) => {
+    // Code this function
+    return board;
+  };
+
+  handleStart = () => {
+    this.setState({ play: !this.state.play });
+  };
+
+  handleReset = () => {
+    console.log("reset");
+    if (this.state.reset) {
+      // **Figure out how to reset (might get rid of originalBoard state and just put it here and when initializing the board state)
+      this.setState({ board: this.state.originalBoard });
+    } else {
+      this.setState({ board: this.state.originalBoard });
+    }
+    this.setState({ reset: !this.state.reset });
+  };
+
+  handleNext = () => {
+    const board = this.nextStep(this.state.board);
+    this.setState({ board: board });
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -34,19 +65,25 @@ class App extends Component {
           variant="secondary"
           text="Start"
           icon={solid("play")}
-          showAlternate={false}
+          showAlternate={this.state.play}
           alternateText="Pause"
           alternateIcon={solid("pause")}
+          onClickEvent={this.handleStart}
         />
         <CustomButton
           variant="secondary"
           text="Reset"
           icon={solid("refresh")}
+          showAlternate={this.state.reset}
+          alternateText="Clear"
+          alternateIcon={solid("xmark")}
+          onClickEvent={this.handleReset}
         />
         <CustomButton
           variant="secondary"
           text="Next"
           icon={solid("angle-right")}
+          onClickEvent={this.handleNext}
         />
         {/* <CustomButton variant="secondary" text="Start" icon={solid("play")} /> */}
       </React.Fragment>

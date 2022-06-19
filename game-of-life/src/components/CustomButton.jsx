@@ -9,30 +9,36 @@ class CustomButton extends Component {
       variant,
       text,
       icon,
+      onClickEvent,
       showAlternate,
+      isLoading = false,
       alternateText = "",
       alternateIcon = "",
     } = this.props;
     // Todo next: optional parameters
     return (
-      <Button variant={variant}>
+      <Button variant={variant} disabled={isLoading} onClick={onClickEvent}>
         {
           alternateText === "" ? (
             <div className="d-flex align-items-center">
               <FontAwesomeIcon className="m-2" icon={icon} />
               {text}
             </div>
-          ) : showAlternate ? (
-            <div className="d-flex align-items-center">
-              <FontAwesomeIcon className="m-2" icon={alternateIcon} />
-              {alternateText}
-            </div>
           ) : (
             <div className="d-flex align-items-center">
-              <FontAwesomeIcon className="m-2" icon={icon} />
-              {text}
+              <FontAwesomeIcon
+                className="m-2"
+                icon={showAlternate ? alternateIcon : icon}
+              />
+              {showAlternate ? alternateText : text}
             </div>
           )
+          // : (
+          //   <div className="d-flex align-items-center">
+          //     <FontAwesomeIcon className="m-2" icon={icon} />
+          //     {text}
+          //   </div>
+          // )
           // <div className="d-flex align-items-center">
           //   <FontAwesomeIcon className="m-2" icon={icon} />
           //   {text}
