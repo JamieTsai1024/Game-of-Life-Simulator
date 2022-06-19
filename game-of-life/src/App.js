@@ -69,31 +69,6 @@ class App extends Component {
           onReset={this.handleReset}
           onNext={this.handleNext}
         />
-        {/* <CustomButton
-          variant="primary"
-          text="Start"
-          icon={solid("play")}
-          showAlternate={this.state.play}
-          alternateText="Pause"
-          alternateIcon={solid("pause")}
-          onClickEvent={this.handleStart}
-        />
-        <CustomButton
-          variant="secondary"
-          text="Reset"
-          icon={solid("refresh")}
-          showAlternate={this.state.reset}
-          alternateText="Clear"
-          alternateIcon={solid("xmark")}
-          onClickEvent={this.handleReset}
-        />
-        <CustomButton
-          variant="secondary"
-          text="Next"
-          icon={solid("angle-right")}
-          onClickEvent={this.handleNext}
-        /> */}
-        {/* <CustomButton variant="secondary" text="Start" icon={solid("play")} /> */}
       </React.Fragment>
     );
   }

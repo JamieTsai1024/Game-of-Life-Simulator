@@ -11,13 +11,13 @@ class CustomButton extends Component {
       icon,
       onClickEvent,
       showAlternate,
-      isLoading = false,
+      disable = false,
       alternateText = "",
       alternateIcon = "",
     } = this.props;
     // Todo next: optional parameters
     return (
-      <Button variant={variant} disabled={isLoading} onClick={onClickEvent}>
+      <Button variant={variant} disabled={disable} onClick={onClickEvent}>
         {
           alternateText === "" ? (
             <div className="d-flex align-items-center">

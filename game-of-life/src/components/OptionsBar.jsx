@@ -7,12 +7,6 @@ import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 class OptionsBar extends Component {
   state = {};
 
-  // styles = {
-  //   .bottom-bar {
-
-  //   }
-  // };
-
   render() {
     const { start, reset, onStart, onReset, onNext } = this.props;
     const barStyle = { backgroundColor: "#1B5C41", height: "15%" };
@@ -25,17 +19,12 @@ class OptionsBar extends Component {
         fixed="bottom"
         className="p-4"
       >
-        {/* bg="dark" */}
-        {/* bg="--bs-purple" 
-        bottom-bar 
-        style="background-color: rgb(95, 174, 31)"*/}
         <Container>
           {/* Container makes them spaced out */}
-          {/* <Navbar.Brand href="#">Navbar</Navbar.Brand> */}
-
           <CustomButton
             variant="secondary"
             text="Reset"
+            disable={false}
             icon={solid("refresh")}
             showAlternate={!reset}
             alternateText="Clear"
@@ -45,6 +34,7 @@ class OptionsBar extends Component {
           <CustomButton
             variant="primary"
             text="Start"
+            disable={false}
             icon={solid("play")}
             showAlternate={!start}
             alternateText="Pause"
@@ -54,6 +44,7 @@ class OptionsBar extends Component {
           <CustomButton
             variant="secondary"
             text="Next"
+            disable={false}
             icon={solid("angle-right")}
             onClickEvent={onNext}
           />
