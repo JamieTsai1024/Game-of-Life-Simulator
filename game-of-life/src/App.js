@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NavigationBar from "./components/NavigationBar";
-import CustomButton from "./components/CustomButton";
+// import CustomButton from "./components/CustomButton";
+import OptionsBar from "./components/OptionsBar";
 import {
   solid,
   // regular,
@@ -26,8 +27,8 @@ class App extends Component {
         icon: brands("github"),
       },
     ],
-    play: true,
-    reset: false,
+    start: true,
+    reset: true,
     board: [],
     originalBoard: [],
   };
@@ -38,7 +39,7 @@ class App extends Component {
   };
 
   handleStart = () => {
-    this.setState({ play: !this.state.play });
+    this.setState({ start: !this.state.start });
   };
 
   handleReset = () => {
@@ -61,8 +62,15 @@ class App extends Component {
     return (
       <React.Fragment>
         <NavigationBar links={this.state.links} />
-        <CustomButton
-          variant="secondary"
+        <OptionsBar
+          start={this.state.start}
+          reset={this.state.reset}
+          onStart={this.handleStart}
+          onReset={this.handleReset}
+          onNext={this.handleNext}
+        />
+        {/* <CustomButton
+          variant="primary"
           text="Start"
           icon={solid("play")}
           showAlternate={this.state.play}
@@ -84,7 +92,7 @@ class App extends Component {
           text="Next"
           icon={solid("angle-right")}
           onClickEvent={this.handleNext}
-        />
+        /> */}
         {/* <CustomButton variant="secondary" text="Start" icon={solid("play")} /> */}
       </React.Fragment>
     );
