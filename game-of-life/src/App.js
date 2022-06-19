@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NavigationBar from "./components/NavigationBar";
+import CustomButton from "./components/CustomButton";
 import {
   solid,
   // regular,
@@ -29,6 +30,25 @@ class App extends Component {
     return (
       <React.Fragment>
         <NavigationBar links={this.state.links} />
+        <CustomButton
+          variant="secondary"
+          text="Start"
+          icon={solid("play")}
+          showAlternate={false}
+          alternateText="Pause"
+          alternateIcon={solid("pause")}
+        />
+        <CustomButton
+          variant="secondary"
+          text="Reset"
+          icon={solid("refresh")}
+        />
+        <CustomButton
+          variant="secondary"
+          text="Next"
+          icon={solid("angle-right")}
+        />
+        {/* <CustomButton variant="secondary" text="Start" icon={solid("play")} /> */}
       </React.Fragment>
     );
   }
