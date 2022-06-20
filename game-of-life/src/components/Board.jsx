@@ -11,11 +11,9 @@ function Board(props) {
               key={index + " " + ind}
               row={index}
               col={ind}
+              size="50px"
               onSquareClick={props.onSquareClick}
-              colour={squareActive ? "#ed47e8" : "#a4a7ab"}
-              // colour={squareActive ? "#ed47e8" : "#a4a7ab"}
-              // Original colours:
-              // colour={squareActive ? "#AD23AD" : "#1B5C41"}
+              colour={squareActive ? props.liveColour : props.deadColour}
             ></Square>
           ))}
         </div>

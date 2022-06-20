@@ -6,8 +6,8 @@ function Square(props) {
     borderStyle: "solid",
     borderColor: "black",
     borderWidth: "1px",
-    width: "50px",
-    height: "50px",
+    width: props.size,
+    height: props.size,
   };
   return (
     <button

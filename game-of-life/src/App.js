@@ -36,6 +36,7 @@ class App extends Component {
         [0, 0, 1, 1],
       ],
       originalBoard: [],
+      step: 0,
     };
   }
 
@@ -81,7 +82,7 @@ class App extends Component {
         <Board
           board={this.state.board}
           liveColour="#a864d3"
-          deadColour=""
+          deadColour="#5ffae0"
           onSquareClick={this.handleSquareClick}
         />
         {/* <Square colour="#1B5C41" onSquareClick={this.handleSquareClick} /> */}
