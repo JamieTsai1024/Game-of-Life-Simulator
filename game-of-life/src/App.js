@@ -62,17 +62,16 @@ class App extends Component {
     var resultBoard = board.map(function (arr) {
       return arr.slice();
     });
-    // maybe make a variable for this.state.board
 
-    // console.log("this.state.board", this.state.board);
+    console.log("this.state.board", this.state.board);
     var surroundingLive = 0;
 
     for (var i = 0; i < board.length; i++) {
       for (var j = 0; j < board[0].length; j++) {
         // Calculate how many surrounding squares are alive
         surroundingLive = 0;
+        // Look through the top
         if (i !== 0 && board[i]) {
-          // Look through the top
           // Top left
           surroundingLive += j !== 0 ? board[i - 1][j - 1] : 0;
           // Top middle
@@ -82,18 +81,18 @@ class App extends Component {
             j !== board[0].length - 1 ? (board[i - 1][j + 1] ? 1 : 0) : 0;
         }
 
+        // Middle left
         if (j !== 0) {
-          // Middle left
           surroundingLive += board[i][j - 1];
         }
 
+        // Middle right
         if (j !== board[0].length - 1) {
-          // Middle right
           surroundingLive += board[i][j + 1];
         }
 
+        // Look through the bottom
         if (i !== board.length - 1) {
-          // Look through the bottom
           // Bottom left
           surroundingLive += j !== 0 ? board[i + 1][j - 1] : 0;
           // Bottom middle
@@ -107,16 +106,14 @@ class App extends Component {
 
         // Turn square on or off depending on how many neighbours it has
         if (board[i][j]) {
-          // Case 1: The cell is alive
-          // Turn it off if it doesn't have 2 and doesn't have 3 surrounding live cells
+          // Case 1: The cell is alive - turn it off if it doesn't have 2 or 3 surrounding live cells
           if (surroundingLive !== 2 && surroundingLive !== 3) {
             // Should die
             console.log("i, j", i, j, "turn off - surroundingLive");
             resultBoard[i][j] = 0;
           }
         } else {
-          // Case 2: The cell is dead
-          // Turn it on if it has 3 surrounding live cells
+          // Case 2: The cell is dead - turn it on if it has 3 surrounding live cells
           if (surroundingLive === 3) {
             // Should live
             resultBoard[i][j] = 1;
@@ -125,104 +122,12 @@ class App extends Component {
         }
       }
     }
-    // this.setState({ board: resultBoard });
     return resultBoard;
   }
 
   handleNext = () => {
-    // this.nextStep(this.state.board);
+    // Set the board with the next iteration
     this.setState({ board: this.nextStep(this.state.board) });
-    // var resultBoard = this.state.board.map(function (arr) {
-    //   return arr.slice();
-    // });
-    // // maybe make a variable for this.state.board
-
-    // // console.log("this.state.board", this.state.board);
-    // var surroundingLive = 0;
-
-    // for (var i = 0; i < this.state.board.length; i++) {
-    //   for (var j = 0; j < this.state.board[0].length; j++) {
-    //     // Calculate how many surrounding squares are alive
-    //     surroundingLive = 0;
-    //     if (i !== 0 && this.state.board[i]) {
-    //       // Look through the top
-    //       // Top left
-    //       surroundingLive += j !== 0 ? this.state.board[i - 1][j - 1] : 0;
-    //       // console.log("here i, j", i, j, "Top left", surroundingLive);
-    //       // Top middle
-    //       surroundingLive += this.state.board[i - 1][j];
-    //       // console.log("here i, j", i, j, "Top left", surroundingLive);
-    //       // Top right
-    //       surroundingLive +=
-    //         j !== this.state.board[0].length - 1
-    //           ? this.state.board[i - 1][j + 1]
-    //             ? 1
-    //             : 0
-    //           : 0;
-    //       // console.log("here i, j", i, j, "Top left", surroundingLive);
-    //     }
-
-    //     if (j !== 0) {
-    //       // Middle left
-    //       surroundingLive += this.state.board[i][j - 1];
-    //     }
-
-    //     // console.log("here i, j", i, j, "Middle left", surroundingLive);
-
-    //     if (j !== this.state.board[0].length - 1) {
-    //       // Middle right
-    //       surroundingLive += this.state.board[i][j + 1];
-    //     }
-
-    //     // console.log("here i, j", i, j, "Middle right", surroundingLive);
-
-    //     if (i !== this.state.board.length - 1) {
-    //       // Look through the bottom
-    //       // Bottom left
-    //       surroundingLive += j !== 0 ? this.state.board[i + 1][j - 1] : 0;
-    //       // console.log("here i, j", i, j, "Bottom left", surroundingLive);
-    //       // Bottom middle
-    //       surroundingLive += this.state.board[i + 1][j];
-    //       // console.log("here i, j", i, j, "Bottom middle", surroundingLive);
-    //       // Bottom right
-    //       surroundingLive +=
-    //         j !== this.state.board[0].length - 1
-    //           ? this.state.board[i + 1][j + 1]
-    //             ? 1
-    //             : 0
-    //           : 0;
-    //       // console.log("here i, j", i, j, "Bottom right", surroundingLive);
-    //     }
-
-    //     console.log("i, j", i, j, "total", surroundingLive);
-
-    //     // Simplify these cases later
-    //     if (this.state.board[i][j]) {
-    //       // Case 1: The cell is alive
-    //       // Turn it off if it doesn't have 2 and doesn't have 3 surrounding live cells
-    //       if (surroundingLive !== 2 && surroundingLive !== 3) {
-    //         // Should die
-    //         console.log(
-    //           // this.state.board[i][j],
-    //           "i, j",
-    //           i,
-    //           j,
-    //           "turn off - surroundingLive"
-    //         );
-    //         resultBoard[i][j] = 0;
-    //       }
-    //     } else {
-    //       // Case 2: The cell is dead
-    //       // Turn it on if it has 3 surrounding live cells
-    //       if (surroundingLive === 3) {
-    //         // Should live
-    //         resultBoard[i][j] = 1;
-    //         console.log("i, j", i, j, "turn on - surroundingLive");
-    //       }
-    //     }
-    //   }
-    // }
-    // this.setState({ board: resultBoard });
   };
 
   handleStart = () => {
