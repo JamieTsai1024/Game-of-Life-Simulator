@@ -1,4 +1,3 @@
-// import React, { Component, useEffect } from "react";
 import React, { Component } from "react";
 import NavigationBar from "./components/NavigationBar";
 import OptionsBar from "./components/OptionsBar";
@@ -125,61 +124,16 @@ class App extends Component {
 
   runGame() {
     // console.log("start run game", this.state.start);
-    var start = this.state.start;
-    var board = this.state.board;
-    console.log("start run game", start);
-    // var nextStep = this.nextStep(board);
     setTimeout(() => {
-      console.log("start", start);
-      if (start) {
-        this.nextStep(board);
-        console.log("next");
+      // console.log("start", this.state.start);
+      if (this.state.start) {
+        this.nextStep(this.state.board);
+        // console.log("next");
       } else {
         return;
       }
-      this.runGame(start);
-    }, 1000);
-    // setTimeout(function () {
-    //   console.log("start", start);
-    //   if (start) {
-    //     this.nextStep();
-    //     console.log("next");
-    //   } else {
-    //     return;
-    //   }
-    //   this.runGame(start);
-    // }, 1000);
-    // if (this.state.start) {
-    //   const timer = setTimeout(() => this.nextStep(this.state.board), 3000);
-    //   clearTimeout(timer);
-    //   console.log("next");
-    // }
-    // if (this.state.start) {
-    //   const timer = setTimeout(() => this.nextStep(this.state.board), 3000);
-    //   clearTimeout(timer);
-    //   console.log("next");
-    //   // this.runGame();
-    // }
-    // while (this.state.start) {
-    //   // const timer = setTimeout(() => this.nextStep(this.state.board), 3000);
-    //   const timer = setTimeout(this.nextStep(this.state.board), 3000);
-    //   clearTimeout(timer);
-    //   console.log("next");
-    // }
-    // if (this.state.start) {
-    //   const timer = setTimeout(() => this.nextStep(this.state.board), 3000);
-    //   clearTimeout(timer);
-    //   console.log("next");
-    //   this.runGame();
-    //   // const timer = setTimeout(() => {
-    //   //   // if (this.state.start) {
-    //   //   this.nextStep(this.state.board);
-    //   //   console.log("next");
-    //   //   this.runGame();
-    //   //   // }
-    //   // }, 3000);
-    //   // return () => clearTimeout(timer);
-    // }
+      this.runGame(this.state.start);
+    }, 500);
   }
 
   handleNext = () => {
@@ -190,12 +144,6 @@ class App extends Component {
 
   handleStart = () => {
     // Save current board for reset and toggle start/pause
-    console.log("start before", this.state.start, "and", !this.state.start);
-    // this.setState({
-    //   originalBoard: this.state.board,
-    //   start: !this.state.start,
-    //   reset: true,
-    // });
     this.setState(
       {
         originalBoard: this.state.board,
@@ -203,27 +151,11 @@ class App extends Component {
         reset: true,
       },
       () => {
-        console.log("start after", this.state.start);
+        // console.log("start after", this.state.start);
         this.runGame(this.state.start);
       }
     );
-    console.log("start after", this.state.start);
-
-    // this.runGame();
-    // this.setState(
-    //   {
-    //     someState: obj,
-    //   },
-    //   () => {
-    //     this.afterSetStateFinished();
-    //   }
-    // );
-    // const timer = setTimeout(this.runGame(), 3000);
-    // clearTimeout(timer);
-
-    // useEffect(() => {
-    //   this.runGame();
-    // }, []);
+    // console.log("start after", this.state.start);
   };
 
   handleReset = () => {
