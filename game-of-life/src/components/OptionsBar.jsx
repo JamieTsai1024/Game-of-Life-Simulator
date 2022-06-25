@@ -22,6 +22,7 @@ class OptionsBar extends Component {
         <Container>
           {/* Container makes them spaced out */}
           <CustomButton
+            addStyle="my-button"
             variant="secondary"
             text="Reset"
             disable={false}

@@ -133,7 +133,7 @@ class App extends Component {
         return;
       }
       this.runGame(this.state.start);
-    }, 500);
+    }, 250);
   }
 
   handleNext = () => {
@@ -185,6 +185,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
+        {/* <div className="my-button">hey</div> */}
         <NavigationBar links={this.state.links} />
         <Board
           board={this.state.board}
@@ -193,6 +194,7 @@ class App extends Component {
           onSquareClick={this.handleSquareClick}
         />
         <OptionsBar
+          className="options-bar"
           start={this.state.start}
           reset={this.state.reset}
           onStart={this.handleStart}

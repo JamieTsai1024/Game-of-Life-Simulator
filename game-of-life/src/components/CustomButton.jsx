@@ -6,6 +6,7 @@ class CustomButton extends Component {
   state = {};
   render() {
     const {
+      addStyle,
       variant,
       text,
       icon,
@@ -17,7 +18,12 @@ class CustomButton extends Component {
     } = this.props;
     // Todo next: optional parameters
     return (
-      <Button variant={variant} disabled={disable} onClick={onClickEvent}>
+      <Button
+        variant={variant}
+        disabled={disable}
+        onClick={onClickEvent}
+        className={addStyle}
+      >
         {
           alternateText === "" ? (
             <div className="d-flex align-items-center">
