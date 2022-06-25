@@ -36,7 +36,7 @@ class OptionsBar extends Component {
             text="Start"
             disable={false}
             icon={solid("play")}
-            showAlternate={!start}
+            showAlternate={start}
             alternateText="Pause"
             alternateIcon={solid("pause")}
             onClickEvent={onStart}

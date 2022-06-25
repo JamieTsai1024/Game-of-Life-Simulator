@@ -1,3 +1,4 @@
+// import React, { Component, useEffect } from "react";
 import React, { Component } from "react";
 import NavigationBar from "./components/NavigationBar";
 import OptionsBar from "./components/OptionsBar";
@@ -8,7 +9,22 @@ import {
   brands,
 } from "@fortawesome/fontawesome-svg-core/import.macro";
 
-// const originalBoard = [];
+const startingBoard = [
+  [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
+  [0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
+  [0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
+  [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
+  [0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
+  [0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0],
+  [0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0],
+  [0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+  [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
+  [0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
+  [0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0],
+  [0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0],
+  [0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+];
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -29,48 +45,30 @@ class App extends Component {
           icon: brands("github"),
         },
       ],
-      start: true,
+      start: false,
       reset: false,
-      // board: [
-      //   [0, 0, 0, 0, 0],
-      //   [0, 0, 0, 0, 0],
-      //   [0, 0, 0, 0, 0],
-      //   [0, 0, 0, 0, 0],
-      //   [0, 0, 0, 0, 0],
-      // ],
-      board: [
-        [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
-        [0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
-        [0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
-        [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
-        [0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
-        [0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0],
-        [0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0],
-        [0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0],
-        [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
-        [0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
-        [0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0],
-        [0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0],
-        [0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0],
-      ],
-      originalBoard: [],
+      board: startingBoard,
+      originalBoard: startingBoard,
       step: 0,
     };
   }
 
+  // Takes in a board and sets the state board to the next iteration
   nextStep(board) {
+    // Note: this.state is accessible in this function, but it's nice to just use board
+
+    // Define variables
     var resultBoard = board.map(function (arr) {
       return arr.slice();
     });
-
-    console.log("this.state.board", this.state.board);
     var surroundingLive = 0;
 
     for (var i = 0; i < board.length; i++) {
       for (var j = 0; j < board[0].length; j++) {
         // Calculate how many surrounding squares are alive
         surroundingLive = 0;
-        // Look through the top
+
+        // Look through the top row
         if (i !== 0 && board[i]) {
           // Top left
           surroundingLive += j !== 0 ? board[i - 1][j - 1] : 0;
@@ -81,17 +79,17 @@ class App extends Component {
             j !== board[0].length - 1 ? (board[i - 1][j + 1] ? 1 : 0) : 0;
         }
 
-        // Middle left
+        // Look through the middle row
         if (j !== 0) {
+          // Middle left
           surroundingLive += board[i][j - 1];
         }
-
-        // Middle right
         if (j !== board[0].length - 1) {
+          // Middle right
           surroundingLive += board[i][j + 1];
         }
 
-        // Look through the bottom
+        // Look through the bottom row
         if (i !== board.length - 1) {
           // Bottom left
           surroundingLive += j !== 0 ? board[i + 1][j - 1] : 0;
@@ -101,7 +99,6 @@ class App extends Component {
           surroundingLive +=
             j !== board[0].length - 1 ? (board[i + 1][j + 1] ? 1 : 0) : 0;
         }
-
         // console.log("i, j", i, j, "total", surroundingLive);
 
         // Turn square on or off depending on how many neighbours it has
@@ -109,7 +106,7 @@ class App extends Component {
           // Case 1: The cell is alive - turn it off if it doesn't have 2 or 3 surrounding live cells
           if (surroundingLive !== 2 && surroundingLive !== 3) {
             // Should die
-            console.log("i, j", i, j, "turn off - surroundingLive");
+            // console.log("i, j", i, j, "turn off - surroundingLive");
             resultBoard[i][j] = 0;
           }
         } else {
@@ -117,34 +114,122 @@ class App extends Component {
           if (surroundingLive === 3) {
             // Should live
             resultBoard[i][j] = 1;
-            console.log("i, j", i, j, "turn on - surroundingLive");
+            // console.log("i, j", i, j, "turn on - surroundingLive");
           }
         }
       }
     }
-    return resultBoard;
+    // return resultBoard;
+    this.setState({ board: resultBoard });
+  }
+
+  runGame() {
+    // console.log("start run game", this.state.start);
+    var start = this.state.start;
+    var board = this.state.board;
+    console.log("start run game", start);
+    // var nextStep = this.nextStep(board);
+    setTimeout(() => {
+      console.log("start", start);
+      if (start) {
+        this.nextStep(board);
+        console.log("next");
+      } else {
+        return;
+      }
+      this.runGame(start);
+    }, 1000);
+    // setTimeout(function () {
+    //   console.log("start", start);
+    //   if (start) {
+    //     this.nextStep();
+    //     console.log("next");
+    //   } else {
+    //     return;
+    //   }
+    //   this.runGame(start);
+    // }, 1000);
+    // if (this.state.start) {
+    //   const timer = setTimeout(() => this.nextStep(this.state.board), 3000);
+    //   clearTimeout(timer);
+    //   console.log("next");
+    // }
+    // if (this.state.start) {
+    //   const timer = setTimeout(() => this.nextStep(this.state.board), 3000);
+    //   clearTimeout(timer);
+    //   console.log("next");
+    //   // this.runGame();
+    // }
+    // while (this.state.start) {
+    //   // const timer = setTimeout(() => this.nextStep(this.state.board), 3000);
+    //   const timer = setTimeout(this.nextStep(this.state.board), 3000);
+    //   clearTimeout(timer);
+    //   console.log("next");
+    // }
+    // if (this.state.start) {
+    //   const timer = setTimeout(() => this.nextStep(this.state.board), 3000);
+    //   clearTimeout(timer);
+    //   console.log("next");
+    //   this.runGame();
+    //   // const timer = setTimeout(() => {
+    //   //   // if (this.state.start) {
+    //   //   this.nextStep(this.state.board);
+    //   //   console.log("next");
+    //   //   this.runGame();
+    //   //   // }
+    //   // }, 3000);
+    //   // return () => clearTimeout(timer);
+    // }
   }
 
   handleNext = () => {
     // Set the board with the next iteration
-    this.setState({ board: this.nextStep(this.state.board) });
+    // this.setState({ board: this.nextStep(this.state.board) });
+    this.nextStep(this.state.board);
   };
 
   handleStart = () => {
     // Save current board for reset and toggle start/pause
-    console.log("start");
-    this.setState({
-      originalBoard: this.state.board,
-      start: !this.state.start,
-      reset: true,
-    });
+    console.log("start before", this.state.start, "and", !this.state.start);
+    // this.setState({
+    //   originalBoard: this.state.board,
+    //   start: !this.state.start,
+    //   reset: true,
+    // });
+    this.setState(
+      {
+        originalBoard: this.state.board,
+        start: !this.state.start,
+        reset: true,
+      },
+      () => {
+        console.log("start after", this.state.start);
+        this.runGame(this.state.start);
+      }
+    );
+    console.log("start after", this.state.start);
+
+    // this.runGame();
+    // this.setState(
+    //   {
+    //     someState: obj,
+    //   },
+    //   () => {
+    //     this.afterSetStateFinished();
+    //   }
+    // );
+    // const timer = setTimeout(this.runGame(), 3000);
+    // clearTimeout(timer);
+
+    // useEffect(() => {
+    //   this.runGame();
+    // }, []);
   };
 
   handleReset = () => {
     console.log("reset");
     if (this.state.reset) {
-      // Reset board
-      // **Figure out how to reset (might get rid of originalBoard state and just put it here and when initializing the board state)
+      // Reset board - to the board when start was pressed
       this.setState({ board: this.state.originalBoard });
     } else {
       // Clear board
@@ -159,17 +244,9 @@ class App extends Component {
     this.setState({ reset: !this.state.reset });
   };
 
-  // handleNext = () => {
-  //   const board = this.nextStep(this.state.board);
-  //   this.setState({ board: board });
-  // };
-
   handleSquareClick = (row, col) => {
-    // console.log("here1", row, col);
     var board = [...this.state.board];
-    // console.log("here2");
     board[row][col] = !board[row][col];
-    // console.log("here3");
     this.setState({ board: board });
   };
 
