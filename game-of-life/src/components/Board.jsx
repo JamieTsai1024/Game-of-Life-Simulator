@@ -22,7 +22,8 @@ function Board(props) {
               col={colIndex}
               size="50px"
               onSquareClick={props.onSquareClick}
-              colour={squareActive ? props.liveColour : props.deadColour}
+              // colour={squareActive ? props.liveColour : props.deadColour}
+              squareClass={squareActive ? "live-cell" : "dead-cell"}
             ></Square>
           ))}
         </div>

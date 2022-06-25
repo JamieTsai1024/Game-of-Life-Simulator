@@ -21,3 +21,11 @@
   color: var(--colour-accent);
   height: 1000px;
 }
+
+.live-cell {
+  background-color: var(--colour-primary);
+}
+
+.dead-cell {
+  background-color: var(--colour-secondary);
+}

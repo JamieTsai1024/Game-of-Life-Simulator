@@ -2,7 +2,7 @@ import React from "react";
 
 function Square(props) {
   const squareStyle = {
-    backgroundColor: props.colour,
+    // backgroundColor: props.colour,
     borderStyle: "solid",
     borderColor: "black",
     borderWidth: "1px",
@@ -13,6 +13,7 @@ function Square(props) {
     <button
       onClick={() => props.onSquareClick(props.row, props.col)}
       style={squareStyle}
+      className={props.squareClass}
     ></button>
   );
 }
