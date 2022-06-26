@@ -14,14 +14,6 @@
   background-color: var(--colour-background);
 }
 
-/* .my-button {
-  background-color: var(--colour-primary);
-}
-
-.my-button:hover {
-  background-color: var(--colour-primary-hover);
-} */
-
 .options-bar {
   color: var(--colour-accent);
   height: 1000px;

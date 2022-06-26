@@ -119,7 +119,6 @@ class App extends Component {
   }
 
   runGame() {
-    // console.log("start run game", this.state.start);
     setTimeout(() => {
       // console.log("start", this.state.start);
       if (this.state.start) {
@@ -184,8 +183,6 @@ class App extends Component {
         <NavigationBar links={this.state.links} />
         <Board
           board={this.state.board}
-          liveColour="#a864d3"
-          deadColour="#5ffae0"
           onSquareClick={this.handleSquareClick}
         />
         <OptionsBar
