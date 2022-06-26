@@ -8,7 +8,7 @@ class NavigationBar extends Component {
   render() {
     const { links } = this.props;
     return (
-      <Navbar bg="dark" variant="dark" expand="md">
+      <Navbar className="colour-nav" bg="dark" variant="dark" expand="md">
         <Container>
           <Navbar.Brand href="#home">Game of Life Simulator</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

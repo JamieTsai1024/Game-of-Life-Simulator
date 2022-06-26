@@ -2,11 +2,7 @@ import React, { Component } from "react";
 import NavigationBar from "./components/NavigationBar";
 import OptionsBar from "./components/OptionsBar";
 import Board from "./components/Board";
-import {
-  solid,
-  // regular,
-  brands,
-} from "@fortawesome/fontawesome-svg-core/import.macro";
+import { solid, brands } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const startingBoard = [
   [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
@@ -185,7 +181,6 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <div className="my-button">hey</div> */}
         <NavigationBar links={this.state.links} />
         <Board
           board={this.state.board}
