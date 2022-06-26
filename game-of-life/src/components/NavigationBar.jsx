@@ -8,9 +8,14 @@ class NavigationBar extends Component {
   render() {
     const { links } = this.props;
     return (
-      <Navbar className="navigation-bar" bg="dark" variant="dark" expand="md">
+      <Navbar
+        className="navigation-bar py-4"
+        bg="dark"
+        variant="dark"
+        expand="md"
+      >
         <Container>
-          <Navbar.Brand href="#home">Game of Life Simulator</Navbar.Brand>
+          <Navbar.Brand href="#home">Game of Life</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse className="justify-content-end">
             <Nav>

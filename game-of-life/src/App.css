@@ -1,26 +1,33 @@
 @import './constants.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-/* :root {
-  --colour-primary: #EDAFB8;
-  --colour-primary-light: #efcbd0;
-  --colour-secondary: #B0C4B1;
-  --colour-secondary-light: #DEDBD2;
-  --colour-secondary-lighter: #dbd8cf;
-  --colour-accent: #B0C4B1;
-  --colour-headings: #4A5759;
-  --colour-background: #283132;
-} */
+body {
+  /* color: var(--colour-headings); */
+  font-family: 'Inter', sans-serif;
+}
 
 .navigation-bar {
-  background-color: var(--colour-background);
+  background-color: var(--colour-nav);
+  /* min-height: 80px; */
 }
 
 .options-bar {
-  background-color: var(--colour-secondary);
+  background-color: var(--colour-accent);
   height: 15%;
 }
 
+.board {
+  background-color: var(--colour-primary-light);
+  border-color: var(--colour-background);
+}
+
+.board-border {
+  background-color: var(--colour-background);
+  /* padding: 5px; */
+}
+
 .live-cell {
+  
   /* background-color: var(--colour-primary); */
   /* background-color: linear-gradient(direction, var(--colour-primary), var(--colour-primary-light)); */
   background-image: radial-gradient(var(--colour-primary-light), var(--colour-primary));
@@ -30,6 +37,7 @@
 
 .dead-cell {
   /* background-color: var(--colour-secondary-light); */
-  background-image: radial-gradient(var(--colour-secondary-lighter), var(--colour-secondary-light));
+  /* background-image: radial-gradient(var(--colour-secondary-lighter), var(--colour-secondary-light)); */
+  background-image: radial-gradient(var(--colour-secondary-light), var(--colour-secondary));
 
 }

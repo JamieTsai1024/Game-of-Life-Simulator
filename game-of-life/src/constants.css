@@ -1,14 +1,25 @@
 :root {
-  --colour-primary: #EDAFB8;
+  /* Blue-purple scheme */
+  --colour-primary: #7879F1;
+  --colour-primary-light: #A5A6F6;
+  --colour-secondary: #56CCF2;
+  --colour-secondary-light: #DEDBD2;
+  --colour-accent: #2F80ED;
+  --colour-headings: #ff0000; 
+  /* 4F4F4F */
+  --colour-background: #E0E0E0;
+  --colour-nav: #5D5FEF;
+  /* Original pink-green scheme */
+  /* --colour-primary: #EDAFB8;
   --colour-primary-light: #efcbd0;
-  /* ecc1c7 is a bit lighter -> more 3d */
-  /* --colour-primary-light: #F7E1D7; */
   --colour-secondary: #B0C4B1;
   --colour-secondary-light: #DEDBD2;
   --colour-secondary-lighter: #dbd8cf;
   --colour-accent: #B0C4B1;
   --colour-headings: #4A5759;
-  --colour-background: #283132;
+  --colour-background: #283132; */
+  /* ecc1c7 is a bit lighter -> more 3d */
+  /* --colour-primary-light: #F7E1D7; */
   /* --colour-body: #cf4848; */
   /* yellow: D7A94B
   avocado: B1BF3A
