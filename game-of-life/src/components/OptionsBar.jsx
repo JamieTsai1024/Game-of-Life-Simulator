@@ -9,15 +9,15 @@ class OptionsBar extends Component {
 
   render() {
     const { start, reset, onStart, onReset, onNext } = this.props;
-    const barStyle = { backgroundColor: "#1B5C41", height: "15%" };
+    // const barStyle = { backgroundColor: "#1B5C41", height: "15%" };
 
     return (
       <Navbar
         expand="md"
         variant="light"
-        style={barStyle}
+        // style={barStyle}
         fixed="bottom"
-        className="p-4"
+        className="p-4 options-bar"
       >
         <Container>
           {/* Container makes them spaced out */}

@@ -186,7 +186,7 @@ class App extends Component {
           onSquareClick={this.handleSquareClick}
         />
         <OptionsBar
-          className="options-bar"
+          // className="options-bar"
           start={this.state.start}
           reset={this.state.reset}
           onStart={this.handleStart}
