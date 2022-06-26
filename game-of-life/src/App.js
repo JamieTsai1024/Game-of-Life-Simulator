@@ -139,9 +139,12 @@ class App extends Component {
 
   handleStart = () => {
     // Save current board for reset and toggle start/pause
+    !this.state.start
+      ? this.setState({ originalBoard: this.state.board })
+      : this.setState({ originalBoard: this.state.originalBoard });
     this.setState(
       {
-        originalBoard: this.state.board,
+        // originalBoard: this.state.board,
         start: !this.state.start,
         reset: true,
       },
