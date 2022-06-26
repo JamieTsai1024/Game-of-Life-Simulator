@@ -2,15 +2,16 @@ import React from "react";
 import Square from "./Square";
 
 function Board(props) {
-  const boardStyle = {
-    // border: "solid black 10px",
-    // backgroundColor: "black",
-    height: "100%",
-  };
+  // const boardStyle = {
+  //   // border: "solid black 10px",
+  //   // backgroundColor: "black",
+  //   height: "100%",
+  // };
 
   return (
-    <div className="board board-boarder">
-      <div style={boardStyle}>
+    <div className="board-container d-flex justify-content-center">
+      <div className="board">
+        {/* <div className="board" style={boardStyle}> */}
         {/* Having trouble centering the board */}
         {/* <div className="row d-flex justify-content-center"> */}
         {/* doesn't work for centering board: className="row d-flex justify-content-center" */}
