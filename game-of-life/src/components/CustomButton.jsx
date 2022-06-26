@@ -23,6 +23,7 @@ class CustomButton extends Component {
         disabled={disable}
         onClick={onClickEvent}
         className={addStyle}
+        size={variant === "primary" ? "lg" : ""}
       >
         {
           alternateText === "" ? (
