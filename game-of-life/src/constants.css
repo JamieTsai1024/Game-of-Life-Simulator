@@ -1,0 +1,19 @@
+:root {
+  --colour-primary: #EDAFB8;
+  --colour-primary-light: #efcbd0;
+  /* ecc1c7 is a bit lighter -> more 3d */
+  /* --colour-primary-light: #F7E1D7; */
+  --colour-secondary: #B0C4B1;
+  --colour-secondary-light: #DEDBD2;
+  --colour-secondary-lighter: #dbd8cf;
+  --colour-accent: #B0C4B1;
+  --colour-headings: #4A5759;
+  --colour-background: #283132;
+  /* --colour-body: #cf4848; */
+  /* yellow: D7A94B
+  avocado: B1BF3A
+  green: 7DA809
+  rice: CACABC
+  seaweed: 18100B
+  salmon: E4A584 */
+}
