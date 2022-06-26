@@ -8,7 +8,6 @@ body {
 
 .navigation-bar {
   background-color: var(--colour-nav);
-  /* min-height: 80px; */
 }
 
 .options-bar {
@@ -16,18 +15,23 @@ body {
   height: 15%;
 }
 
+.btn {
+  color: var(--colour-headings);
+}
+
 .board {
+  height: 100%;
   background-color: var(--colour-primary-light);
   border-color: var(--colour-background);
 }
 
-.board-border {
+.board-container {
   background-color: var(--colour-background);
   /* padding: 5px; */
 }
 
 .live-cell {
-  
+
   /* background-color: var(--colour-primary); */
   /* background-color: linear-gradient(direction, var(--colour-primary), var(--colour-primary-light)); */
   background-image: radial-gradient(var(--colour-primary-light), var(--colour-primary));
