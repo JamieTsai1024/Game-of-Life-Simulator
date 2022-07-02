@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 body {
-  /* color: var(--colour-headings); */
+  color: var(--colour-headings);
   font-family: 'Inter', sans-serif;
   background-color: var(--colour-background);
 }
@@ -16,9 +16,17 @@ body {
   height: 15%;
 }
 
-.btn {
+/* .btn {
   color: var(--colour-headings);
 }
+
+.btn:visited {
+  color: var(--colour-headings);
+} */
+
+/* .btn:hover {
+  color: var(--colour-headings);
+} */
 
 .board {
   /* height: 100%; */

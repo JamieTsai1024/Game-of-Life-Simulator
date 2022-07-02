@@ -6,7 +6,7 @@ class CustomButton extends Component {
   state = {};
   render() {
     const {
-      addStyle,
+      // addStyle,
       variant,
       text,
       icon,
@@ -22,7 +22,8 @@ class CustomButton extends Component {
         variant={variant}
         disabled={disable}
         onClick={onClickEvent}
-        className={addStyle}
+        // className="custom-btn"
+        // className={addStyle}
         size={variant === "primary" ? "lg" : ""}
       >
         {
